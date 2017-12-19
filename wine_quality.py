@@ -30,6 +30,8 @@ hyperparameters = { 'randomforestregressor__max_features' : ['auto', 'sqrt', 'lo
 
 #Cross-validation, runs the loop on pipeline data set to cross validate the hyperparameters and divides set into cv=10 parts
 clf = GridSearchCV(pipeline, hyperparameters, cv=10)
+#Chooses a part as test set in each iteration and rest cv-1 parts as training set
+#In each iteration it preprocesses the test and train sets separately
  
 # Fit and tune model
 clf.fit(X_train, y_train) #Refit is true by default
