@@ -52,3 +52,18 @@ pd.crosstab(data.day_of_week,data.y).plot(kind='bar')
 plt.title('Purchase Frequency for Day of Week')
 plt.xlabel('Day of Week')
 plt.ylabel('Frequency of Purchase')
+
+pd.crosstab(data.month,data.y).plot(kind='bar')
+plt.title('Purchase Frequency for Month')
+plt.xlabel('Month')
+plt.ylabel('Frequency of Purchase')
+
+data.age.hist()
+plt.title('Histogram of Age')
+plt.xlabel('Age')
+plt.ylabel('Frequency')
+
+pd.crosstab(data.poutcome,data.y).plot(kind='bar')
+plt.title('Purchase Frequency for Poutcome')
+plt.xlabel('Poutcome')
+plt.ylabel('Frequency of Purchase')
