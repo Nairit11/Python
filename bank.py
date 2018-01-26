@@ -28,3 +28,27 @@ plt.show()
 
 #To display average values of the various features for all possible values of y
 print(data.groupby('y').mean())
+#Similarly we can observe means for all features for each value of any feature line age, job, etc.
+
+#To visualise the data
+pd.crosstab(data.job,data.y).plot(kind='bar')
+plt.title('Purchase Frequency for Job Title')
+plt.xlabel('Job')
+plt.ylabel('Frequency of Purchase')
+
+table=pd.crosstab(data.marital,data.y)
+table.div(table.sum(1).astype(float), axis=0).plot(kind='bar', stacked=True)
+plt.title('Stacked Bar Chart of Marital Status vs Purchase')
+plt.xlabel('Marital Status')
+plt.ylabel('Proportion of Customers')
+
+table=pd.crosstab(data.education,data.y)
+table.div(table.sum(1).astype(float), axis=0).plot(kind='bar', stacked=True)
+plt.title('Stacked Bar Chart of Education vs Purchase')
+plt.xlabel('Education')
+plt.ylabel('Proportion of Customers')
+
+pd.crosstab(data.day_of_week,data.y).plot(kind='bar')
+plt.title('Purchase Frequency for Day of Week')
+plt.xlabel('Day of Week')
+plt.ylabel('Frequency of Purchase')
